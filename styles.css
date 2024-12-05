@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #ffe6e6, #ffb3d9, #ff99cc);
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+.love-letter {
+    width: 90%;
+    max-width: 800px;
+    margin: 2rem;
+}
+
+.envelope {
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transform: translateY(0);
+    animation: float 6s ease-in-out infinite;
+}
+
+.letter-content {
+    position: relative;
+}
+
+h1 {
+    color: #ff1493;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.message {
+    line-height: 1.8;
+    color: #444;
+}
+
+.message p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.heartfelt, .memories, .gratitude, .closing {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease forwards;
+}
+
+.heartfelt { animation-delay: 0.5s; }
+.memories { animation-delay: 1s; }
+.gratitude { animation-delay: 1.5s; }
+.closing { animation-delay: 2s; }
+
+.signature {
+    text-align: right;
+    font-style: italic;
+    color: #ff1493;
+    margin-top: 2rem;
+}
+
+.floating-hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .love-letter {
+        margin: 1rem;
+    }
+    
+    .envelope {
+        padding: 2rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .message p {
+        font-size: 1rem;
+    }
+}
